@@ -17,17 +17,14 @@ class Task02 {
     {
         File file = new File("test.txt");
 
-        if (file.exists()) {
-            System.out.println("Файл существует");
-        }
-        else{
-            System.out.println("Файл не существует");
-        }
+        if (file.exists()) System.out.println("Файл существует");
+        else System.out.println("Файл не существует");
+        
         String text = "TEST".repeat(100);
  
         try (PrintWriter out = new PrintWriter(file, StandardCharsets.UTF_8))
         {
-            Files.write(Paths.get("file3.txt"), "content".getBytes());
+            Files.write(Paths.get("test.txt"), "content".getBytes());
             out.print(text);
             System.out.println("Информация в файл записана");
         } 
